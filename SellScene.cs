@@ -21,7 +21,7 @@ namespace SpartaDungeonGame
                     Console.WriteLine("- {0} {1} | {2} | {3} | {4}",
                         i + 1,
                         Program.character.inventory[i].name,
-                        (Program.character.inventory[i].atk > 0) ? "공격력 +" + Program.character.inventory[i].atk : "방어력 +" + Program.character.inventory[i].amr,
+                        (Program.shop.product[i].part.Equals("무기")) ? "공격력 +" + Program.character.inventory[i].atk : "방어력 +" + Program.character.inventory[i].amr,
                         Program.character.inventory[i].description,
                         (Program.character.inventory[i].price * 0.85) + " G"
                         );

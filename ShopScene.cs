@@ -20,7 +20,7 @@ namespace SpartaDungeonGame
                 {
                     Console.WriteLine("- {0} | {1} | {2} | {3}",
                         Program.shop.product[i].name,
-                        (Program.shop.product[i].atk > 0) ? "공격력 +" + Program.shop.product[i].atk : "방어력 +" + Program.shop.product[i].amr,
+                        (Program.shop.product[i].part.Equals("무기")) ? "공격력 +" + Program.shop.product[i].atk : "방어력 +" + Program.shop.product[i].amr,
                         Program.shop.product[i].description,
                         (Program.shop.product[i].isSold) ? "구매완료" : Program.shop.product[i].price + " G"
                         );
