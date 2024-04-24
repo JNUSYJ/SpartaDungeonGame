@@ -21,7 +21,7 @@ namespace SpartaDungeonGame
                         i + 1,
                         (Program.character.inventory[i].isEquiped) ? "[E]" : "",
                         Program.character.inventory[i].name,
-                        (Program.character.inventory[i].atk > 0) ? "공격력 +" + Program.character.inventory[i].atk : "방어력 +" + Program.character.inventory[i].amr,
+                        (Program.shop.product[i].part.Equals("무기")) ? "공격력 +" + Program.character.inventory[i].atk : "방어력 +" + Program.character.inventory[i].amr,
                         Program.character.inventory[i].description
                         );
                 }
