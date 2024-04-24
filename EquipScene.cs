@@ -36,7 +36,17 @@ namespace SpartaDungeonGame
                         if (0 < input && input <= Program.character.inventory.Count)
                         {
                             if (!Program.character.inventory[input - 1].isEquiped)
+                            {
+                                for(int i = 0; i < Program.character.inventory.Count(); i++)
+                                {
+                                    if (i == input - 1) continue;
+                                    if (Program.character.inventory[i].part.Equals(Program.character.inventory[input - 1].part) && Program.character.inventory[i].isEquiped)
+                                    {
+                                        Program.character.UnequipItem(i);
+                                    }
+                                }
                                 Program.character.EquipItem(input - 1);
+                            }
                             else Program.character.UnequipItem(input - 1);
                         }
                         break;

@@ -14,7 +14,7 @@ namespace SpartaDungeonGame
 
         public Character()
         {
-            level = 1; atk = 10; enhAtk = 0; amr = 5; enhAmr = 0; hp = 100; gold = 1500; name = "chad"; job = "전사";
+            level = 1; atk = 10; enhAtk = 0; amr = 5; enhAmr = 0; hp = 100; gold = 15000; name = "chad"; job = "전사";
             inventory = new List<MyItem>();
         }
 
