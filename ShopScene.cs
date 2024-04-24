@@ -25,14 +25,17 @@ namespace SpartaDungeonGame
                         (Program.shop.product[i].isSold) ? "구매완료" : Program.shop.product[i].price + " G"
                         );
                 }
-                Console.WriteLine("\n1. 아이템 구매\n0. 나가기");
+                Console.WriteLine("\n1. 아이템 구매\n2. 아이템 판매\n0. 나가기");
 
-                switch (Program.sceneManager.GetUserInput(1))
+                switch (Program.sceneManager.GetUserInput(2))
                 {
                     case 0:
                         return;
                     case 1:
                         Program.sceneManager.ChangeScene("BuyScene");
+                        break;
+                    case 2:
+                        Program.sceneManager.ChangeScene("SellScene");
                         break;
                 }
             }

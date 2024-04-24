@@ -33,7 +33,7 @@ namespace SpartaDungeonGame
                     case 0:
                         return;
                     default:
-                        if (0 < input && input < Program.character.inventory.Count)
+                        if (0 < input && input <= Program.character.inventory.Count)
                         {
                             if (!Program.character.inventory[input - 1].isEquiped)
                                 Program.character.EquipItem(input - 1);
