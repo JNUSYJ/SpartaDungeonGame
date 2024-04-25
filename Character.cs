@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace SpartaDungeonGame
 {
     public class Character
     {
+        [JsonInclude]
         public int level, hp, gold, exp, requiredExp;
+        [JsonInclude]
         public float atk, enhAtk, amr, enhAmr;
+        [JsonInclude]
         public string name, job;
+        [JsonInclude]
         public List<MyItem> inventory;
 
         public Character()
