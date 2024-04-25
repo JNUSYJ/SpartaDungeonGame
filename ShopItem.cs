@@ -10,7 +10,7 @@ namespace SpartaDungeonGame
     {
         public bool isSold;
 
-        public ShopItem(string name, string part, string description, int atk, int amr, int price, bool isSold) : base(name, part, description, atk, amr, price)
+        public ShopItem(string name, string part, string description, float atk, float amr, int price, bool isSold) : base(name, part, description, atk, amr, price)
         {
             this.isSold = isSold;
         }

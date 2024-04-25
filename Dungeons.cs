@@ -18,9 +18,9 @@ namespace SpartaDungeonGame
         public Dungeons() 
         {
             list = [
-                new Dungeon("쉬운 던전", 5),
-                new Dungeon("일반 던전", 11),
-                new Dungeon("어려운 던전", 17)
+                new Dungeon("쉬운 던전", 5f),
+                new Dungeon("일반 던전", 11f),
+                new Dungeon("어려운 던전", 17f)
             ];
         }
 
@@ -60,7 +60,7 @@ namespace SpartaDungeonGame
         {
             isSucceed = true;
             Random random = new Random();
-            penaltyHp = (20 + (list[input].requiredAmr - Program.character.amr) + random.Next(15));
+            penaltyHp = (20 + (int)(list[input].requiredAmr - Program.character.amr) + random.Next(15));
             Program.character.hp -= penaltyHp;
             if (Program.character.hp < 1)
                 Program.character.hp = 1;
@@ -69,8 +69,9 @@ namespace SpartaDungeonGame
             else if (input == 1) clearGold = 1700;
             else if (input == 2) clearGold = 2500;
             random = new Random();
-            earnedGold = (int)(clearGold + clearGold * random.Next(Program.character.atk, Program.character.atk * 2) * 0.01);
+            earnedGold = (int)(clearGold + clearGold * random.Next((int)Program.character.atk, (int)Program.character.atk * 2) * 0.01f);
             Program.character.gold += earnedGold;
+            Program.character.ExpUp(1);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace SpartaDungeonGame
     {
         public bool isEquiped;
 
-        public MyItem(string name, string part, string description, int atk, int amr, int price, bool isEquiped) : base(name, part, description, atk, amr, price)
+        public MyItem(string name, string part, string description, float atk, float amr, int price, bool isEquiped) : base(name, part, description, atk, amr, price)
         {
             this.isEquiped = isEquiped;
         }
