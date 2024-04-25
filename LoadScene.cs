@@ -17,9 +17,12 @@ namespace SpartaDungeonGame
                 Console.WriteLine("불러오기\n불러올 저장 파일의 이름(번호X)을 입력해주세요.\n\n[저장 파일 목록]\n");
                 string directory = ".\\..\\..\\..\\sav";
                 DirectoryInfo di = new DirectoryInfo(directory);
-                foreach (FileInfo fi in di.GetFiles())
+                if(di.Exists && di.GetFiles() != null)
                 {
-                    Console.WriteLine(fi.Name);
+                    foreach (FileInfo fi in di.GetFiles())
+                    {
+                        Console.WriteLine(fi.Name);
+                    }
                 }
                 Console.WriteLine("\n0. 나가기");
 
