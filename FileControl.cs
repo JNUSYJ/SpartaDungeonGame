@@ -44,5 +44,33 @@ namespace SpartaDungeonGame
                 Program.systemMessage.SetMessage("저장에 실패했습니다. " + e.Message);
             }
         }
+
+        public void Load(string fileName)
+        {
+            string directory = ".\\..\\..\\..\\sav";
+            string filePath = directory + "\\" + fileName;
+            string fileInfo;
+            DirectoryInfo di = new DirectoryInfo(directory);
+            FileInfo fi = new FileInfo(filePath);
+            try
+            {
+                if (!(di.Exists && fi.Exists))
+                {
+                    Program.systemMessage.SetMessage("그런 이름의 저장 파일이 존재하지 않습니다.");
+                    return;
+                }
+                else
+                {
+                    StreamReader sr = new StreamReader(filePath);
+                    fileInfo = sr.ReadToEnd();
+                    sr.Close();
+                    Program.character = JsonSerializer.Deserialize<Character>(fileInfo);
+                    Program.systemMessage.SetMessage($"{fileName} 파일 불러오기에 성공했습니다.");
+                }
+            } catch (Exception e)
+            {
+                Program.systemMessage.SetMessage("불러오기에 실패했습니다. " + e.Message);
+            }
+        }
     }
 }

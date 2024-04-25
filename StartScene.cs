@@ -18,7 +18,7 @@ namespace SpartaDungeonGame
                 Console.WriteLine("이곳에서 던전으로 들어가기 전 활동을 할 수 있습니다.");
                 Console.WriteLine("\n1. 상태 보기\n2. 인벤토리\n3. 상점\n4. 던전 입장\n5. 휴식하기\n6. 저장\n7. 불러오기");
 
-                switch (Program.sceneManager.GetUserInput(6))
+                switch (Program.sceneManager.GetUserInput(7))
                 {
                     case 0:
                         return;
