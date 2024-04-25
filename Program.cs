@@ -8,6 +8,7 @@
         public static Dungeons dungeons;
         public static SceneManager sceneManager;
         public static SystemMessage systemMessage;
+        public static FileControl fileControl;
 
         static void Main(string[] args)
         {
@@ -17,6 +18,7 @@
             dungeons = new Dungeons();
             sceneManager = new SceneManager();
             systemMessage = new SystemMessage();
+            fileControl = new FileControl();
             sceneManager.ChangeScene("StartScene");
         }
     }

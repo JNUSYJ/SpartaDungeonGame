@@ -35,5 +35,18 @@ namespace SpartaDungeonGame
                 return -1;
             }
         }
+
+        public string GetUserInput()
+        {
+            Program.systemMessage.PrintMessage();
+            Console.Write("\n저장 파일 이름을 입력해주세요.\n>> ");
+            string input = Console.ReadLine();
+            if (input == null || input.Contains(" ") || input.Contains("\\") || input.Contains("."))
+            {
+                Program.systemMessage.SetMessage("잘못된 이름입니다.");
+                return "error";
+            }
+            else return input;
+        }
     }
 }

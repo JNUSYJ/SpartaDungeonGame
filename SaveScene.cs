@@ -11,12 +11,23 @@ namespace SpartaDungeonGame
     {
         public override void RunScene()
         {
-            Console.Clear();
-            Console.WriteLine("저장\n");
-            Console.WriteLine(Program.character.ToString);
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("저장\n어떤 이름으로 저장하시겠습니까?");
+                Console.WriteLine("\n0. 나가기");
 
-            Program.sceneManager.GetUserInput(0);
-
+                string fileName = Program.sceneManager.GetUserInput();
+                int exitNum = -1;
+                bool exitCheck = int.TryParse(fileName, out exitNum);
+                if (exitCheck && exitNum == 0)
+                    return;
+                else
+                {
+                    if (!exitCheck && !fileName.Equals("error"))
+                        Program.fileControl.Save(fileName);
+                }
+            }
         }
     }
 }
